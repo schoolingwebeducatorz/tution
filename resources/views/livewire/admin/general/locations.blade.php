@@ -56,7 +56,7 @@
             </tr>
             @foreach($locations as $location)
             <tr>
-                <td> <img src="{{ asset('storage/country') }}/{{ $location->photo }}" height="15px" /> {{ $location->location->country }}</td>
+                <td> <img src="https://tution.asadmukhtar.info/storage/app/public/country/{{ $location->photo }}" height="15px" /> {{ $location->location->country }}</td>
                 <td>{{ $location->location->currency }} - {{ $location->location->symbol }} </td>
                 <td>{{ $location->whatsapp }}</td>
                 <td>{{ $location->email }}</td>
