@@ -63,15 +63,18 @@
             </tr>
             @foreach($student->enrollment as $enrollment)
             <tr>
-                <td>{{ $enrollment->subject->title }}</td>
-                <td>{{ $enrollment->grade->title }}</td>
-                <td>{{ $enrollment->ciaw }}</td>
-                <td>{{ $enrollment->amount }} {{ $enrollment->country->location->code }}</td>
+                <td>{{ $enrollment->subject->title ?? 'null' }}</td>
+                <td>{{ $enrollment->grade->title ?? 'null' }}</td>
+                <td>{{ $enrollment->ciaw ?? 'null' }}</td>
                 <td>
-                    @if(!empty($enrollment->trainer_id))
+                    {{ $enrollment->amount ?? 'null' }} 
+                    {{ $enrollment->country->location->code ?? 'null' }}
+                </td>
+                <td>
+                    @if(!empty($enrollment->trainer_id) && !empty($enrollment->trainer->name))
                         {{ $enrollment->trainer->name }}
                     @else 
-                    <span class="badge badge-info">No Trainer</span>
+                        <span class="badge badge-info">No Trainer</span>
                     @endif
                 </td>
                 <td>
