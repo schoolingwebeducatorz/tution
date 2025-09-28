@@ -17,16 +17,17 @@
             @foreach($students as $student)
             <tr>
                 <td>{{ $student->id }}</td>
-                <td> {{ ucfirst($student->name) }} </td>
-                <td> {{ $student->whatsapp }} </td>
-                <td> {{ $student->email }} </td>
+                <td> {{ ucfirst($student->student->name) }} </td>
+                <td> {{ $student->student->whatsapp }} </td>
+                <td> {{ $student->student->email }} </td>
                 <td> <i class="fa fa-cog"></i> Status</td>
-                <td> {{ $student->country->location->country }}</td>
+                <td> {{ $student->student->country->location->country }}</td>
                 <td class="text-center"> 
-                    <span class="badge badge-danger">{{ $student->enrollment->count() }}</span> 
+                    <span class="badge badge-danger">{{ $student->grade->title }}</span> 
+                    <span class="badge badge-warning">{{ $student->subject->title ?? 'N/A' }}</span> 
                 </td>
                 <td> 
-                    <a>
+                    <a href="{{ route('feeproccess',$student->id) }}">
                         <button class="btn btn-warning btn-sm"> <i class="fa fa-money"></i> Payment </button>
                     </a>
                 <td>

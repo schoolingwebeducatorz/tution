@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,6 +92,7 @@ Route::prefix('admin')->middleware('admin')->namespace('App\Livewire\Admin')->gr
     Route::prefix('accounts')->namespace('Accounts')->group(function(){
         Route::get('/fee','Feestructure')->name('admin.fee');
         Route::get('month','Monthfee')->name('monthly.fee');
+        Route::get('/enrollment/fee{id}','FeeDetails')->name('enrollment.fee');
     });
     // time table ..
     Route::prefix('slot')->group(function(){

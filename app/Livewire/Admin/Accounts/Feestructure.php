@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Accounts;
 
+use App\Models\enrollment;
 use Livewire\Component;
 use App\Models\student;
 
@@ -11,10 +12,11 @@ class Feestructure extends Component
     public function render()
     {
         $students = $this->students;
+        //dd($students);
         return view('livewire.admin.accounts.feestructure',compact('students'));
     }
     // mount ..
     public function mount(){
-        $this->students = student::orderby('id','desc')->get();
+        $this->students = enrollment::orderby('id','desc')->get();
     }
 }
