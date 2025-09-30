@@ -13,6 +13,6 @@ class trainerschedule extends Model
     }
     public function timeschedule()
     {
-        return $this->belongsTo(\App\Models\Timeschedule::class, 'timeschedule_id');
+        return $this->belongsTo(\App\Models\timeschedule::class, 'timeschedule_id');
     }
 }
