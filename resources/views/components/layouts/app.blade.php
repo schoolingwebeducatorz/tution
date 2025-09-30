@@ -235,7 +235,7 @@
         </div>
         @elseif(Auth::user()->is_trainer == 1)
         <div class="br-sideleft-menu">
-            <a href="{{ route('student.dashboard') }}" class="br-menu-link active">
+            <a href="{{ route('teacher.dashbaord') }}" class="br-menu-link active">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
                     <span class="menu-item-label">Dashboard</span>
@@ -245,6 +245,12 @@
                 <div class="br-menu-item">
                     <i class="menu-item-icon fa fa-users tx-18"></i>
                     <span class="menu-item-label">Your Students</span>
+                </div>
+            </a>
+              <a href="{{ route('teacher.scheduale',Auth::user()->trainer->id) }}" class="br-menu-link">
+                <div class="br-menu-item">
+                    <i class="menu-item-icon fa fa-clock-o tx-18"></i>
+                    <span class="menu-item-label">My Schedule</span>
                 </div>
             </a>
             <a href="{{ route('teacher.assignments') }}" class="br-menu-link">

@@ -11,4 +11,8 @@ class trainerschedule extends Model
     public function trainer(){
         return $this->belongsTo(trainer::class);
     }
+    public function timeschedule()
+    {
+        return $this->belongsTo(\App\Models\Timeschedule::class, 'timeschedule_id');
+    }
 }

@@ -18,7 +18,9 @@
         <td>#{{  $enrollment->id }}</td>
         <td>{{  $enrollment->student->name }}</td>
         <td>{{  $enrollment->subject->title }}</td>
-        <td>Assignments</td>
+        <td>
+          <span class="badge bg-danger">{{ Auth::user()->trainer->assignments->where('status',0)->count() }}</span>
+        </td>
         <td>
           <a href="{{ route('student.details',$enrollment->id) }}">
             <button class="btn btn-info btn-sm"><i class="fa fa-hand-o-right"></i> Details</button>

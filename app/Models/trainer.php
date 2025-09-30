@@ -17,4 +17,7 @@ class trainer extends Model
     public function enrollments(){
         return $this->hasMany(enrollment::class);
     }
+    public function assignments(){
+        return $this->hasMany(assignment::class);
+    }
 }

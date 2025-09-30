@@ -42,6 +42,7 @@ Route::prefix('teacher')->namespace('App\Livewire\Teachers')->middleware('teache
     Route::get('/dashboard','Dashboard')->name('teacher.dashbaord');
     Route::get('/students','Yourstudents')->name('teacher.students');
     Route::get('/profile/{id}','Studentdetails')->name('student.details');
+    Route::get('/my-scheduale/{id}','scheduale')->name('teacher.scheduale');
     Route::get('/assignments','Assignments')->name('teacher.assignments');
 });
 // admin ..
